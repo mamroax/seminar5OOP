@@ -6,7 +6,7 @@ package data;
 public class HotDrink extends Drink implements Comparable<HotDrink> {
     protected int temp;
 
-    public HotDrink(String name, int cost, int volume, int temp) {
+    public HotDrink(String name, int volume, int temp, int cost) {
         super(name, cost, volume);
         this.temp = temp;
     }

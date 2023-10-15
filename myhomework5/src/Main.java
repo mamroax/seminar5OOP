@@ -30,12 +30,18 @@ public class Main {
         Controller controller = new Controller(model, view);
 
         // создадим несколько продуктов с помощью контроллера
-        controller.createDrink("Эспрессо", 60, 200);
-        controller.createDrink("Американо", 70, 350);
-        controller.createDrink("Каппучино", 80, 300);
-        controller.createDrink("Латте", 65, 250);
+        controller.createDrink("Эспрессо", 200, 60);
+        controller.createDrink("Американо", 350, 70);
+        controller.createDrink("Каппучино", 300, 80);
+        controller.createDrink("Латте", 250, 65);
 
         // выведем с помощью представления
         view.printDetails(model.getProducts());
+
+        // поиск и вывод с помощью view
+        view.printFound("Латте", 250, 65, model);
+
+        // поиск продукта с помощью контроллера
+        controller.printFoudProduct("Латте", 25, 65);
     }
 }

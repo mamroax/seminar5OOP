@@ -17,13 +17,20 @@ public class HotDrinkVendingMachine implements VendingMachine {
         products.add(new HotDrink(name, volume, temperature));
     }
 
+    public void addProduct(String name, int volume, int temperature, int cost){
+        products.add(new HotDrink(name, volume, temperature, cost));
+    }
+
     public HotDrink getProduct(String name, int volume, int temperature) {
         for (int i = 0; i< products.size(); i++){
             HotDrink product = products.get(i);
-            if (product.getName() == name && product.getVolume() == volume && product.getTemperature() == temperature){
+            if (product.getName().equalsIgnoreCase(name) && product.getVolume() == volume && product.getTemperature() == temperature){
+                System.out.println("Найден продукт");
                 return product;
             }
         }
+        System.out.println(String.format("Продукт c названием %s, обьемом %d, температурой %d не найден",
+                name, volume, temperature));
         return null;
     }
 

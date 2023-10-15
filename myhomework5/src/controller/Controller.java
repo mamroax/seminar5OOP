@@ -2,6 +2,7 @@ package controller;
 
 import data.HotDrink;
 import data.HotDrinkVendingMachine;
+import data.Product;
 import view.View;
 
 import java.util.List;
@@ -15,6 +16,13 @@ public class Controller {
         this.view = view;
     }
 
+    public void printFoudProduct(String name, int volume, int temperature){
+        Product product = machine.getProduct(name, volume, temperature);
+        if (product!=null){
+            System.out.println(product);
+        }
+    }
+
     public HotDrinkVendingMachine getMachine(){
         return machine;
     }
@@ -25,6 +33,10 @@ public class Controller {
 
     public void createDrink(String name, int volume, int temperature){
         machine.addProduct(name, volume, temperature);
+    }
+
+    public void createDrink(String name, int volume, int temperature, int cost){
+        machine.addProduct(name, volume, temperature, cost);
     }
 
     public void printInfo(){
