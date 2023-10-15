@@ -7,7 +7,7 @@ import view.View;
 import java.util.List;
 
 public class Controller {
-    HotDrinkVendingMachine machine;
+    private HotDrinkVendingMachine machine;
     private View view;
 
     public Controller(HotDrinkVendingMachine machine, View view){
